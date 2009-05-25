@@ -1,0 +1,15 @@
+INPUT(
+./platform_win\release\obj\main.o
+./platform_win\release\obj\maindialog.o
+./platform_win\release\obj\infocollector.o
+./platform_win\release\obj\translator.o
+./platform_win\release\obj\controller.o
+./platform_win\release\obj\model.o
+./platform_win\release\obj\modelhelper.o
+./platform_win\release\obj\moc_maindialog.o
+./platform_win\release\obj\moc_translator.o
+./platform_win\release\obj\moc_controller.o
+./platform_win\release\obj\moc_model.o
+./platform_win\release\obj\moc_logobject.o
+./platform_win\release\obj\qrc_res.o
+);
