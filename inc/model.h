@@ -1,5 +1,5 @@
 /*******************************************************************************
-  Класс модели в шаблоне MVC
+  Класс модели
 
   Автор: Балякин С.В.
   Дата: 05.05.2009 г.
@@ -48,8 +48,15 @@ public:
     // Открывает readme-файл
     void OpenReadmeFile(const QString& lightroom_path);
 
+#ifdef Q_WS_WIN
     // Переключает язык в Lightroom на выбранный
     void ToggleLanguageToSelected(const QString& language_abb);
+#endif
+
+#ifdef Q_WS_MAC
+    // Переключает язык в Lightroom на русский
+    void ToggleLanguageToRussian(const QString& lightroom_path);
+#endif
 
     // Запускает Lightroom
     void ExecLightroom(const QString& lightroom_path);
