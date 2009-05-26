@@ -100,7 +100,7 @@ void MainDialog::ChangeCurrentPage(int increment)
 
     // Определяем необходимость отображения страницы с непереведенными фразами
     bool show_page_not_translated = true;
-    //emit IsPageNotTranslatedNeeded(show_page_not_translated);
+    emit IsPageNotTranslatedNeeded(show_page_not_translated);
 
     if (!show_page_not_translated && next_page_index == page_not_translated )
         ui->stacked_widget->setCurrentIndex(next_page_index + increment);

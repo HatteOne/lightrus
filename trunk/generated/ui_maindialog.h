@@ -1,7 +1,7 @@
 /********************************************************************************
 ** Form generated from reading ui file 'maindialog.ui'
 **
-** Created: Mon 25. May 16:14:07 2009
+** Created: Mon May 25 21:50:30 2009
 **      by: Qt User Interface Compiler version 4.5.1
 **
 ** WARNING! All changes made in this file will be lost when recompiling ui file!

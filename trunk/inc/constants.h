@@ -47,8 +47,8 @@ const QString text_next                    = QString::fromUtf8("Далее >");
 const QString text_exec                    = QString::fromUtf8("Перевести");
 const QString text_finish                  = QString::fromUtf8("Завершить");
 const QString text_browse_dialog_title     = QString::fromUtf8("Выберите директорию с установленным\nAdobe Photoshop Lightroom");
-const QString text_translating_finished    = QString::fromUtf8("<br>Завершено.");
-const QString text_unknown_phrases_found_d = QString::fromUtf8("Обнаружено неизвестных фраз: %1. Данные фразы не были переведены.<br>Перейдите на следующую страницу для работы с неизвестными фразами.");
+const QString text_translating_finished    = QString::fromUtf8("<br>Перевод завершен.");
+const QString text_unknown_phrases_found_d = QString::fromUtf8("<br>Обнаружено неизвестных фраз: %1.<br>Данные фразы не были переведены.<br>Перейдите на следующую страницу для получения<br>более подробной информации.");
 const QString text_os_version_s            = QString::fromUtf8("Версия ОС: %1");
 const QString text_os_word_size_d          = QString::fromUtf8("Битность ОС: %1");
 const QString text_application_version_s   = QString::fromUtf8("Версия приложения: %1");
@@ -63,7 +63,7 @@ const QString text_no                      = QString::fromUtf8("Нет");
 const QString text_close_warning_title     = QString::fromUtf8("Русификатор Adobe Lightroom");
 const QString text_translating_file_s      = QString::fromUtf8("Перевод...%1");
 const QString text_prepare_dictionaries    = QString::fromUtf8("Подготовка словарей к переводу...<br>");
-const QString text_copying_help_files      = QString::fromUtf8("<br>Копирование файлов помощи...<br>");
+const QString text_copying_help_files      = QString::fromUtf8("Копирование файлов помощи...");
 const QString text_convert_to_html_ss      = QString::fromUtf8("<span style=\"color:%1;\">%2</span><br>");
 const QString text_mailto_url_sss          = QString::fromUtf8("mailto:%1?subject=%2&body=%3");
 const QString text_author_mail_address     = QString::fromUtf8("lightroom@list.ru");
@@ -113,7 +113,8 @@ const QString lang_key_prefix = QString::fromUtf8("$$$/AgPreferences/Interface/"
 const QString str_phrase_prefix = QString::fromUtf8("$$$/");
 
 // Символы, разрешенные в идентификаторе фразы
-const QString str_phrase_id_chars = QString::fromUtf8("ABCDEFGHIJKLMNOPQRSTUVWXYZabcdefghijklmnopqrstuvwxyz0123456789_/");
+const QString str_phrase_id_chars =
+    QString::fromUtf8("ABCDEFGHIJKLMNOPQRSTUVWXYZabcdefghijklmnopqrstuvwxyz0123456789_/");
 
 
 // Платформенно-зависимые константы ********************************************
@@ -170,7 +171,7 @@ const QString text_os_wv_unknown   = QString::fromUtf8("Unknown Windows version"
 const QString text_ui_label_path                  = QString::fromUtf8("Приложение Lightroom");
 const QString text_ui_label_title_parameters      = QString::fromUtf8("Выберите приложение Adobe Photoshop Lightroom и определите остальные необходимые параметры");
 const QString text_ui_label_choose_languages      = QString::fromUtf8("Выберите язык в качестве исходника перевода:");
-const QString text_ui_check_box_toggle_to_russian = QString::fromUtf8("Принудительно активировать русский язык в Lightroom (имеет смысл только в не русских версиях Mac OS)");
+const QString text_ui_check_box_toggle_to_russian = QString::fromUtf8("Отключить все языки кроме русского");
 const QString text_ui_label_welcome_ss            = QString::fromUtf8("<H2>Добро пожаловать в программу русификации Adobe Photoshop Lightroom 2.x</H2>Данная программа позволит добавить русский язык в Lightroom в качестве дополнительного.<br><br>Версия русификатора: %1<br>Версия словаря: %2");
 
 const QString str_applications_dir_path  = QString::fromUtf8("/Applications");           // Абсолютная папка программ в Mac OS

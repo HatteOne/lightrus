@@ -59,10 +59,19 @@ void Model::OpenReadmeFile(const QString& lightroom_path)
     model_helper->OpenReadmeFile(lightroom_path);
 }
 
+#ifdef Q_WS_WIN
 void Model::ToggleLanguageToSelected(const QString& language_abb)
 {
     model_helper->ToggleLanguageToSelected(language_abb);
 }
+#endif
+
+#ifdef Q_WS_MAC
+void Model::ToggleLanguageToRussian(const QString& lightroom_path)
+{
+    model_helper->ToggleLanguageToRussian(lightroom_path);
+}
+#endif
 
 void Model::ExecLightroom(const QString& lightroom_path)
 {

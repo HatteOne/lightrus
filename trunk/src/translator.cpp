@@ -182,23 +182,30 @@ void Translator::TranslateFile(const QString& in_file_name, const QString& out_f
     QFile out_file(out_file_name);
 
     // Создаем резевную копию если необходимо
-    if (make_backup)
-    {
-        QString backup_file_name = out_file_name + str_backup_postfix;
-        QFile backup_file(backup_file_name);
+    if (QFile::exists(out_file_name)) // Есть, что заменять
+        if (make_backup) // Задана опция резервного копирования
+        {
+            QString backup_file_name = out_file_name + str_backup_postfix;
+            QFile backup_file(backup_file_name);
 
-        if (backup_file.exists())
-            if (!backup_file.remove())
-                DoError(err_text_fail_to_remove_file_sds.arg(QDir::toNativeSeparators(backup_file_name)).arg(backup_file.error()).arg(backup_file.errorString()));
+            if (backup_file.exists())
+                if (!backup_file.remove())
+                    DoError(err_text_fail_to_remove_file_sds.arg(QDir::toNativeSeparators(backup_file_name)).arg(backup_file.error()).arg(backup_file.errorString()));
 
-        if (!out_file.rename(backup_file_name))
-            DoError(err_text_fail_to_rename_file_from_to_ssds.arg(QDir::toNativeSeparators(out_file_name), QDir::toNativeSeparators(backup_file_name)).arg(out_file.error()).arg(out_file.errorString()));
-    }
-    else // Или просто удаляем оригинал
-    {
-        if (!out_file.remove())
-            DoError(err_text_fail_to_remove_file_sds.arg(QDir::toNativeSeparators(out_file_name)).arg(out_file.error()).arg(out_file.errorString()));
-    }
+            if (!out_file.rename(backup_file_name))
+                DoError(err_text_fail_to_rename_file_from_to_ssds.arg(QDir::toNativeSeparators(out_file_name), QDir::toNativeSeparators(backup_file_name)).arg(out_file.error()).arg(out_file.errorString()));
+        }
+        else // Или просто удаляем оригинал
+        {
+            if (!out_file.remove())
+                DoError(err_text_fail_to_remove_file_sds.arg(QDir::toNativeSeparators(out_file_name)).arg(out_file.error()).arg(out_file.errorString()));
+        }
+
+    // Создаем директорию целевого файла, если это необходимо
+    QString out_path = QFileInfo(out_file_name).absolutePath();
+    QDir out_dir;
+    if (!out_dir.exists(out_path))
+        out_dir.mkpath(out_path);
 
     // Копируем из временного файла в конечный
     if (!tmp_file.copy(out_file_name))
@@ -298,9 +305,9 @@ QStringList Translator::GetUnknownKeys()
 
 void Translator::SendTranslatingStats()
 {
-    DoInfo(text_translating_finished);
     if (GetUnknownKeysCount() != 0)
         DoInfo( text_unknown_phrases_found_d.arg(GetUnknownKeysCount()) );
+    DoInfo(text_translating_finished);
 }
 
 void Translator::FillLangDictionary(const QString& lightroom_dir, const QString& lang_abb, Dictionary& dictionary)

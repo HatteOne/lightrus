@@ -12,30 +12,39 @@
 #endif
 
 
+#ifdef Q_WS_WIN
 void ModelHelper::CopyEnglishHelpFiles(const QString& lightroom_path,
                                        const QString& language_abb,
                                        bool is_need_backup)
 {
-#ifdef Q_WS_WIN
+    // Имя папки с файлами помощи на выбранном языке
     QString lang_help_dir_name = lightroom_path + QDir::separator() +
-                                 consts::str_resources_sub_dir_name + QDir::separator() +
-                                 language_abb + QDir::separator() + consts::str_help_sub_dir_name;
+        consts::str_resources_sub_dir_name + QDir::separator() +
+        language_abb + QDir::separator() + consts::str_help_sub_dir_name;
+    // Имя папки с файлами помощи на английском языке
     QString eng_help_dir_name  = lightroom_path + QDir::separator() +
-                                 consts::str_resources_sub_dir_name + QDir::separator() +
-                                 consts::str_english_abb + QDir::separator() + consts::str_help_sub_dir_name;
+        consts::str_resources_sub_dir_name + QDir::separator() +
+        consts::str_english_abb + QDir::separator() + consts::str_help_sub_dir_name;
 #endif
 
 #ifdef Q_WS_MAC
+void ModelHelper::CopyEnglishHelpFiles(const QString& lightroom_path,
+                                       const QString&,
+                                       bool is_need_backup)
+{
+    // Имя папки с файлами помощи на русском языке
     QString lang_help_dir_name = lightroom_path + QDir::separator() +
-                                 consts::str_resources_sub_dir_name + QDir::separator() +
-                                 consts::str_contents_subdir_name + QDir::separator() +
-                                 language_abb + consts::str_lproj_extension + QDir::separator() + consts::str_help_sub_dir_name;
+        consts::str_contents_subdir_name + QDir::separator() +
+        consts::str_resources_sub_dir_name + QDir::separator() +
+        consts::str_russian_abb + consts::str_lproj_extension + QDir::separator() +
+        consts::str_help_sub_dir_name;
+    // Имя папки с файлами помощи на английском языке
     QString eng_help_dir_name = lightroom_path + QDir::separator() +
-                                 consts::str_resources_sub_dir_name + QDir::separator() +
-                                 consts::str_contents_subdir_name + QDir::separator() +
-                                 consts::str_english_abb + consts::str_lproj_extension + QDir::separator() + consts::str_help_sub_dir_name;
+        consts::str_contents_subdir_name + QDir::separator() +
+        consts::str_resources_sub_dir_name + QDir::separator() +
+        consts::str_english_abb + consts::str_lproj_extension + QDir::separator() +
+        consts::str_help_sub_dir_name;
 #endif
-
 
     if (is_need_backup)
     {
@@ -47,7 +56,9 @@ void ModelHelper::CopyEnglishHelpFiles(const QString& lightroom_path,
             DoError(consts::err_text_fail_to_rename_dir_ss.arg(QDir::toNativeSeparators(lang_help_dir_name), QDir::toNativeSeparators(backup_dir_name)));
     }
     else
+    {
         RemoveDir(lang_help_dir_name);
+    }
 
     CopyDir(eng_help_dir_name, lang_help_dir_name);
 }
@@ -125,7 +136,7 @@ bool ModelHelper::CopyDir(const QString& from_dir_path, const QString& to_dir_pa
 
 bool ModelHelper::MoveDir(const QString& from_dir_path, const QString& to_dir_path)
 {
-    if (!RemoveDir(to_dir_path))
+    if (QDir().exists(to_dir_path) && !RemoveDir(to_dir_path))
         return false;
 
     if (!CopyDir(from_dir_path, to_dir_path))
@@ -210,19 +221,26 @@ void ModelHelper::ToggleLanguageToSelected(const QString& language_abb)
 void ModelHelper::ToggleLanguageToRussian(const QString& lightroom_path)
 {
     // Определяем путь к папке ресурсов
-    QString resources_path = lightroom_path + QDir::separator() + consts::str_contents_subdir_name + QDir::separator() + consts::str_resources_sub_dir_name;
-    QDir dir(resources_path);
-    QStringList from_list = dir.entryList(QStringList(consts::str_lang_subdir_filter), QDir::Dirs | QDir::NoDotAndDotDot);
+    QString resources_path = lightroom_path + QDir::separator() +
+        consts::str_contents_subdir_name + QDir::separator() +
+        consts::str_resources_sub_dir_name;
+
+    QDir from_dir(resources_path);
+    QStringList lang_list = from_dir.entryList(QStringList(consts::str_lang_subdir_filter),
+                                               QDir::Dirs | QDir::NoDotAndDotDot);
 
     // Определяем путь к папке отключенных ресурсов
-    QString to_dir = lightroom_path + QDir::separator() + consts::str_contents_subdir_name + QDir::separator() + consts::str_resources_disabled_sub_dir_name;
+    QString to_path = lightroom_path + QDir::separator() +
+        consts::str_contents_subdir_name + QDir::separator() +
+        consts::str_resources_disabled_sub_dir_name;
+    QDir to_dir (to_path);
 
-    from_list.removeOne(consts::str_russian_abb + consts::str_lproj_extension);
+    lang_list.removeOne(consts::str_russian_abb + consts::str_lproj_extension);
 
     // Перемещаем все каталоги ресурсов кроме русского в отключенные,
     // тем самым оставляя в приложении Lightroom только русский язык
-    foreach (QString from_dir, from_list)
-        MoveDir(from_dir, to_dir);
+    foreach (QString lang, lang_list)
+        MoveDir(from_dir.absoluteFilePath(lang), to_dir.absoluteFilePath(lang));
 }
 #endif
 
