@@ -393,7 +393,7 @@ void Translator::ParseBinaryLangFile(const QString& file_name, Dictionary& dic)
         for (; cur_index < data.size(); ++cur_index)
         {
             ch = data[cur_index];
-            if (str_phrase_id_chars.contains(ch)) // Прибавляем все подходящие символы в название ключа
+            if (str_phrase_id_chars.contains(ch)) // Если символ подходит , то добавляем его в идентификатор ключа
             {
                 key += ch;
                 continue;
