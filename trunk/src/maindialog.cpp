@@ -74,7 +74,7 @@ MainDialog::MainDialog(QWidget *parent)
     connect(ui->push_button_prev,    SIGNAL(clicked()), SLOT(ToPrevPage()));
     connect(ui->push_button_browse,  SIGNAL(clicked()), SLOT(BrowseFolder()));
     connect(ui->push_button_copy,    SIGNAL(clicked()), SLOT(CopyMailTextToClipboard()));
-    connect(ui->push_button_cancel,  SIGNAL(clicked()), SLOT(close()));
+    connect(ui->push_button_cancel,  SIGNAL(pressed()), SLOT(close()));
 
     connect(ui->stacked_widget, SIGNAL(currentChanged(int)), SLOT(OnPageActivated(int)));
     connect(ui->line_edit_path, SIGNAL(textChanged(const QString&)), SIGNAL(ChangeLightroomDirPath(const QString&)));
@@ -253,6 +253,19 @@ void MainDialog::closeEvent(QCloseEvent *event)
         event->accept();
     else
         event->ignore();
+}
+
+void MainDialog::keyPressEvent(QKeyEvent *event)
+{
+    if (event->key() == Qt::Key_Escape)
+    {
+        event->accept();
+        close();
+    }
+    else
+    {
+        event->ignore();
+    }
 }
 
 void MainDialog::SetLightroomPath(const QString& path)

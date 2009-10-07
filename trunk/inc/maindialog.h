@@ -98,6 +98,7 @@ public:
 
 protected:
     void closeEvent(QCloseEvent *event);
+    void keyPressEvent(QKeyEvent *event);
 
 private Q_SLOTS:
     void ToNextPage(); // Переходит на следующую страницу
@@ -105,6 +106,7 @@ private Q_SLOTS:
     void BrowseFolder(); // Открывает диалог выбора файла
     void OnPageActivated(int page_index);
     void CopyMailTextToClipboard();
+    //void on_push_button_cancel_pressed();
 
 private:
     Ui::MainDialogClass *ui;
