@@ -746,8 +746,8 @@
      <item>
       <widget class="QLabel" name="label_author">
        <property name="text">
-        <string>Сергей Балякин&lt;br&gt;
-&lt;a href=&quot;mailto:lightroom@list.ru&quot;&gt;&lt;span style=&quot;text-decoration: underline; color:#0000ff;&quot;&gt;lightroom@list.ru&lt;/span&gt;&lt;/a&gt;</string>
+        <string>Сайт проекта&lt;br&gt;
+&lt;a href=&quot;http://lightrus.googlecode.com&quot;&gt;&lt;span style=&quot;text-decoration: underline; color:#0000ff;&quot;&gt;lightrus.googlecode.com&lt;/span&gt;&lt;/a&gt;</string>
        </property>
        <property name="alignment">
         <set>Qt::AlignBottom|Qt::AlignLeading|Qt::AlignLeft</set>

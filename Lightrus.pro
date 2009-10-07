@@ -3,8 +3,8 @@
 # -------------------------------------------------
 TARGET = Lightrus
 
-CONFIG-=release
-CONFIG+=debug
+CONFIG+=release
+CONFIG-=debug
 
 TEMPLATE = app
 
