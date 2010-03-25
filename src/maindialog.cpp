@@ -243,7 +243,7 @@ void MainDialog::closeEvent(QCloseEvent *event)
     QMessageBox message_box;
     message_box.setWindowTitle(text_close_warning_title);
     message_box.setText(text_close_warning_text);
-    message_box.setIcon(QMessageBox::Warning);
+    message_box.setIcon(QMessageBox::Question);
     QPushButton* yes_button = message_box.addButton(text_yes, QMessageBox::YesRole);
     yes_button->setDefault(true);
     message_box.addButton(text_no, QMessageBox::NoRole);

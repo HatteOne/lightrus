@@ -67,7 +67,7 @@
       <number>0</number>
      </property>
      <property name="currentIndex">
-      <number>0</number>
+      <number>3</number>
      </property>
      <widget class="QWidget" name="page_start">
       <property name="sizePolicy">
@@ -544,7 +544,7 @@
             </font>
            </property>
            <property name="text">
-            <string>В процессе перевода были обнаружены неизвестные фразы.&lt;br &gt;Вы можете отправить автоматически составленный текст письма автору данного русификатора на адрес &lt;a href=&quot;mailto:lightroom@list.ru?subject=Unknown%20phrases&quot;&gt;&lt;span style=&quot; text-decoration: underline; color:#0000ff;&quot;&gt;lightroom@list.ru&lt;/span&gt;&lt;/a&gt; для помощи в его своевременном обновлении. &lt;b&gt;Спасибо!&lt;/b&gt;</string>
+            <string>В процессе перевода были обнаружены неизвестные фразы.&lt;br &gt;Вы можете помочь в развитии проекта и отправить письмо на адрес &lt;a href=&quot;mailto:lightroom@list.ru?subject=Unknown%20phrases&quot;&gt;&lt;span style=&quot; text-decoration: underline; color:#0000ff;&quot;&gt;lightroom@list.ru&lt;/span&gt;&lt;/a&gt; приведенный ниже текст.&lt;br&gt;&lt;b&gt;Спасибо!&lt;/b&gt;</string>
            </property>
            <property name="alignment">
             <set>Qt::AlignLeading|Qt::AlignLeft|Qt::AlignTop</set>
@@ -596,7 +596,7 @@
          <item>
           <widget class="QPushButton" name="push_button_copy">
            <property name="text">
-            <string>Скопировать текст письма к буфер обмена</string>
+            <string>Скопировать текст письма в буфер обмена</string>
            </property>
           </widget>
          </item>
@@ -643,8 +643,9 @@
           <widget class="QLabel" name="label_final">
            <property name="text">
             <string>&lt;H2&gt;Русификация Adobe Photoshop Lightroom завершена&lt;/H2&gt;
-Процесс русификации программы Adobe Photoshop Lightroom завершен.&lt;br&gt;
-Для поиска решения основных проблем, связанных с русификацией, просьба ознакомиться с readme-файлом, либо обращаться на e-mail автора &lt;a href=&quot;mailto:lightroom@list.ru&quot;&gt;&lt;span style=&quot;text-decoration: underline; color:#0000ff;&quot;&gt;lightroom@list.ru&lt;/span&gt;&lt;/a&gt;</string>
+Процесс русификации программы Adobe Photoshop Lightroom завершен.&lt;br&gt;&lt;br&gt;
+Для ознакомления с некоторыми деталями русификации вы можете почитать readme-файл. &lt;br&gt;В случае возникновения проблем с установкой или обнаружения неточностей перевода пишите на e-mail автора &lt;a href=&quot;mailto:lightroom@list.ru&quot;&gt;&lt;span style=&quot;text-decoration: underline; color:#0000ff;&quot;&gt;lightroom@list.ru&lt;/span&gt;&lt;/a&gt;
+&lt;br&gt;&lt;br&gt;Свежую версию русификатора вы всегда можете скачать с &lt;a href=&quot;http://lightrus.googlecode.com&quot;&gt;&lt;span style=&quot;text-decoration: underline; color:#0000ff;&quot;&gt;сайта проекта&lt;/span&gt;&lt;/a&gt;</string>
            </property>
            <property name="alignment">
             <set>Qt::AlignLeading|Qt::AlignLeft|Qt::AlignTop</set>
