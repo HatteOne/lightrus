@@ -204,6 +204,7 @@ void Translator::TranslateFile(const QString& in_file_name, const QString& out_f
 
     // Создаем резевную копию если необходимо
     if (QFile::exists(out_file_name)) // Есть, что заменять
+    {
         if (make_backup) // Задана опция резервного копирования
         {
             QString backup_file_name = out_file_name + str_backup_postfix;
@@ -221,6 +222,7 @@ void Translator::TranslateFile(const QString& in_file_name, const QString& out_f
             if (!out_file.remove())
                 DoError(err_text_fail_to_remove_file_sds.arg(QDir::toNativeSeparators(out_file_name)).arg(out_file.error()).arg(out_file.errorString()));
         }
+    }
 
     // Создаем директорию целевого файла, если это необходимо
     QString out_path = QFileInfo(out_file_name).absolutePath();
