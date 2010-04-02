@@ -185,8 +185,8 @@ const QString text_os_wv_unknown   = QString::fromUtf8("Unknown Windows version"
 #ifdef Q_WS_MAC
 
 // Тексты элементов интерфейса
-const QString text_ui_label_path                  = QString::fromUtf8("Приложение Lightroom");
-const QString text_ui_label_title_parameters      = QString::fromUtf8("Выберите приложение Adobe Photoshop Lightroom и определите остальные необходимые параметры");
+const QString text_ui_label_path                  = QString::fromUtf8("Полный путь приложения Adobe Lightroom");
+const QString text_ui_label_title_parameters      = QString::fromUtf8("Перетащите приложение Аdobe Photoshop Lightroom в это окно или выберите его при помощи кнопки \"Обзор...\"");
 const QString text_ui_label_choose_languages      = QString::fromUtf8("Выберите язык в качестве исходника перевода:");
 const QString text_ui_check_box_toggle_to_russian = QString::fromUtf8("Отключить все языки кроме русского");
 const QString text_ui_label_welcome_ss            = QString::fromUtf8("<H2>Добро пожаловать в программу русификации Adobe Photoshop Lightroom 2.x</H2>Данная программа позволит добавить русский язык в Lightroom в качестве дополнительного.<br><br>Версия русификатора: %1<br>Версия словаря: %2");

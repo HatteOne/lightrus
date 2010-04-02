@@ -99,6 +99,9 @@ public:
 protected:
     void closeEvent(QCloseEvent *event);
     void keyPressEvent(QKeyEvent *event);
+    void dropEvent(QDropEvent *event);
+    void dragEnterEvent(QDragEnterEvent *event);
+    void dragMoveEvent(QDragMoveEvent* event);
 
 private Q_SLOTS:
     void ToNextPage(); // Переходит на следующую страницу
