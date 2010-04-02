@@ -6993,3 +6993,7 @@
 "$$$/Sample/Fields/ModelRelease/Yes=Да"
 "$$$/Sample/Fields/RandomString=Случайная строка"
 "$$$/SampleTagset/Title=Пример набора тегов плагина"
+"$$$/AgNamingUI/DNGCompatibility/Item=^1 и выше"
+"$$$/AgNamingUI/DNGCompatibility/Tooltip=^1 и выше: DNG-файл будет совместим с ^1 (^2) и выше,а также с ^3 и выше."
+"$$$/AgNamingUI/DNGCompatibility/TooltipWithOftenOlder=^1 и выше: DNG-файл будет совместим с ^1 (^2) и выше,а также с ^3 и выше. Часто DNG-файл будет совместим с более ранними версиями, в зависимости от модели фотокамеры."
+"$$$/AgNamingUI/DNGOptions/Compatibility=Совместимость:"
