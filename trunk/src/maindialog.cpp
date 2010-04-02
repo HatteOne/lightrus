@@ -59,7 +59,7 @@ const bool is_enabled_prev_button[] = {
 
 const bool is_enabled_next_button[] = {
     true,   // page_start
-    true,   // page_parameters,
+    false,  // page_parameters,
     false,  // page_translation
     true,   // page_not_translated
     true }; // page_last
@@ -69,6 +69,8 @@ MainDialog::MainDialog(QWidget *parent)
     : QDialog(parent), ui(new Ui::MainDialogClass)
 {
     ui->setupUi(this);
+
+    setAcceptDrops(true);
 
     connect(ui->push_button_next,    SIGNAL(clicked()), SLOT(ToNextPage()));
     connect(ui->push_button_prev,    SIGNAL(clicked()), SLOT(ToPrevPage()));
@@ -268,6 +270,34 @@ void MainDialog::keyPressEvent(QKeyEvent *event)
     }
 }
 
+void MainDialog::dropEvent(QDropEvent *event)
+{
+    const QMimeData* mimeData = event->mimeData();
+
+    if (mimeData->hasUrls())
+    {
+        QList<QUrl> urls = mimeData->urls();
+        if (urls.count() > 0)
+        {
+            QString url = urls[0].toString(); // take the first url
+            SetLightroomPath(url);
+        }
+    }
+    event->acceptProposedAction();
+}
+
+void MainDialog::dragMoveEvent(QDragMoveEvent* event)
+{
+    if (event->mimeData()->hasUrls())
+        event->accept();
+}
+
+void MainDialog::dragEnterEvent(QDragEnterEvent *event)
+{
+    if (event->mimeData()->hasUrls())
+        event->acceptProposedAction();
+}
+
 void MainDialog::SetLightroomPath(const QString& path)
 {
     ui->line_edit_path->setText(QDir::toNativeSeparators(path));
@@ -282,6 +312,7 @@ void MainDialog::SetIsValidLightroomPath(bool is_valid)
         palette.setColor(QPalette::Text, color_red);
 
     ui->line_edit_path->setPalette(palette);
+    ui->push_button_next->setEnabled(is_valid);
 }
 
 QString MainDialog::GetLightroomPath()
