@@ -130,7 +130,6 @@ void Model::BuildMailText(QStringList& text)
     text.append(text_os_version_s.arg(InfoCollector::GetOSVersion()));
     text.append(text_os_word_size_d.arg(InfoCollector::GetWordSize()));
     text.append(text_application_version_s.arg(application_version));
-    text.append(text_dictionary_version_s.arg(dictionary_version));
     text.append(text_lightroom_path_s.arg(translator->GetLightroomPath()));
     text.append(text_language_abb_ss.arg(translator->GetLanguageAbb(), GetLanguageName(translator->GetLanguageAbb())));
     text.append(text_unknown_phrases_count_d.arg(translator->GetUnknownKeysCount()));

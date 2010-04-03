@@ -27,7 +27,7 @@
    <string>Русификатор Adobe Lightroom</string>
   </property>
   <property name="windowIcon">
-   <iconset>
+   <iconset resource="res.qrc">
     <normaloff>:/res/images/app.ico</normaloff>:/res/images/app.ico</iconset>
   </property>
   <layout class="QGridLayout" name="gridLayout_2">
@@ -67,7 +67,7 @@
       <number>0</number>
      </property>
      <property name="currentIndex">
-      <number>1</number>
+      <number>4</number>
      </property>
      <widget class="QWidget" name="page_start">
       <property name="sizePolicy">
@@ -110,7 +110,7 @@
           <string/>
          </property>
          <property name="pixmap">
-          <pixmap>:/res/images/side_logo.png</pixmap>
+          <pixmap resource="res.qrc">:/res/images/side_logo.png</pixmap>
          </property>
          <property name="scaledContents">
           <bool>false</bool>
@@ -187,7 +187,7 @@
           <string/>
          </property>
          <property name="pixmap">
-          <pixmap>:/res/images/top_logo.png</pixmap>
+          <pixmap resource="res.qrc">:/res/images/top_logo.png</pixmap>
          </property>
         </widget>
        </item>
@@ -431,7 +431,7 @@
           <string/>
          </property>
          <property name="pixmap">
-          <pixmap>:/res/images/top_logo.png</pixmap>
+          <pixmap resource="res.qrc">:/res/images/top_logo.png</pixmap>
          </property>
         </widget>
        </item>
@@ -574,7 +574,7 @@
           <string/>
          </property>
          <property name="pixmap">
-          <pixmap>:/res/images/top_logo.png</pixmap>
+          <pixmap resource="res.qrc">:/res/images/top_logo.png</pixmap>
          </property>
         </widget>
        </item>
@@ -678,7 +678,7 @@
           <string/>
          </property>
          <property name="pixmap">
-          <pixmap>:/res/images/side_logo.png</pixmap>
+          <pixmap resource="res.qrc">:/res/images/side_logo.png</pixmap>
          </property>
          <property name="scaledContents">
           <bool>false</bool>
@@ -697,7 +697,6 @@
           <widget class="QLabel" name="label_final">
            <property name="text">
             <string>&lt;H2&gt;Русификация Adobe Photoshop Lightroom завершена&lt;/H2&gt;
-Процесс русификации программы Adobe Photoshop Lightroom завершен.&lt;br&gt;&lt;br&gt;
 Для ознакомления с некоторыми деталями русификации вы можете почитать readme-файл. &lt;br&gt;В случае возникновения проблем с установкой или обнаружения неточностей перевода пишите на e-mail автора &lt;a href=&quot;mailto:lightroom@list.ru&quot;&gt;&lt;span style=&quot;text-decoration: underline; color:#0000ff;&quot;&gt;lightroom@list.ru&lt;/span&gt;&lt;/a&gt;
 &lt;br&gt;&lt;br&gt;Свежую версию русификатора вы всегда можете скачать с &lt;a href=&quot;http://lightrus.googlecode.com&quot;&gt;&lt;span style=&quot;text-decoration: underline; color:#0000ff;&quot;&gt;сайта проекта&lt;/span&gt;&lt;/a&gt;</string>
            </property>
@@ -870,6 +869,8 @@
   </layout>
  </widget>
  <layoutdefault spacing="6" margin="11"/>
- <resources/>
+ <resources>
+  <include location="res.qrc"/>
+ </resources>
  <connections/>
 </ui>

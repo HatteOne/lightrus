@@ -1,7 +1,7 @@
 # -------------------------------------------------
 # Project created by QtCreator 2009-04-21T10:13:34
 # -------------------------------------------------
-TARGET = lightrus
+TARGET = lightroom_rus_261
 
 #CONFIG+=release
 #CONFIG-=debug
