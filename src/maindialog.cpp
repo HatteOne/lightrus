@@ -91,7 +91,7 @@ MainDialog::MainDialog(QWidget *parent)
     ui->label_title_parameters->setText     (text_ui_label_title_parameters);
     ui->label_choose_languages->setText     (text_ui_label_choose_languages);
     ui->check_box_toggle_to_russian->setText(text_ui_check_box_toggle_to_russian);
-    ui->label_welcome->setText              (text_ui_label_welcome_ss.arg(application_version, dictionary_version));
+    ui->label_welcome->setText              (text_ui_label_welcome_s.arg(application_version));
 }
 
 MainDialog::~MainDialog()

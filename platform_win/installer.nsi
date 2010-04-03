@@ -1,6 +1,6 @@
 Name "Adobe Photoshop Lightroom Rus"
 
-OutFile "lightrus_1_0.exe"
+OutFile "lightroom_rus_261.exe"
 RequestExecutionLevel admin
 SilentInstall silent
 SetCompressor /FINAL lzma
@@ -17,10 +17,10 @@ Section ""
 	SetOutPath $0
 	
 	; Копируем во временную директорию файлы для программы
-	File release\lightrus.exe
+	File release\lightroom_rus_261.exe
 	File release\*.dll
 	
-	ExecWait $0\lightrus.exe
+	ExecWait $0\lightroom_rus_261.exe
 	
 	SetOutPath $TEMP
 	RMDir /r $0

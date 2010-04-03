@@ -40,10 +40,7 @@ namespace consts
 // Нумераторы версий ***********************************************************
 
 // Версия приложения
-const QString application_version = QString::fromUtf8("1.0");
-
-// Версия словаря
-const QString dictionary_version = QString::fromUtf8("1.0");
+const QString application_version = QString::fromUtf8("2.6.1");
 
 
 // Пути к ресурсным файлам *****************************************************
@@ -68,8 +65,7 @@ const QString text_translating_finished    = QString::fromUtf8("<br>Перево
 const QString text_unknown_phrases_found_d = QString::fromUtf8("<br>Обнаружено неизвестных фраз: %1.<br>Данные фразы не были переведены.<br>Перейдите на следующую страницу для получения<br>более подробной информации.");
 const QString text_os_version_s            = QString::fromUtf8("Версия ОС: %1");
 const QString text_os_word_size_d          = QString::fromUtf8("Битность ОС: %1");
-const QString text_application_version_s   = QString::fromUtf8("Версия приложения: %1");
-const QString text_dictionary_version_s    = QString::fromUtf8("Версия словаря: %1");
+const QString text_application_version_s   = QString::fromUtf8("Версия русификатора: %1");
 const QString text_lightroom_path_s        = QString::fromUtf8("Папка установки: %1");
 const QString text_language_abb_ss         = QString::fromUtf8("Язык замены: %1 (%2)");
 const QString text_unknown_phrases_count_d = QString::fromUtf8("Количество неизвестных фраз: %1\n");
@@ -144,7 +140,7 @@ const QString text_ui_label_path                  = QString::fromUtf8("Папк�
 const QString text_ui_label_title_parameters      = QString::fromUtf8("Выберите папку установки Adobe Photoshop Lightroom и определите остальные необходимые параметры");
 const QString text_ui_label_choose_languages      = QString::fromUtf8("Выберите язык для замены на русский:");
 const QString text_ui_check_box_toggle_to_russian = QString::fromUtf8("Переключить язык в Lightroom на русский");
-const QString text_ui_label_welcome_ss            = QString::fromUtf8("<H2>Добро пожаловать в программу русификации Adobe Photoshop Lightroom 2.x</H2>Данная программа позволит заменить один из дополнительных языков приложения Adobe Photoshop Lightroom на русский.<br><br>Версия русификатора: %1<br>Версия словаря: %2<br><br>Автор: Сергей Балякин, 2010");
+const QString text_ui_label_welcome_s             = QString::fromUtf8("<H2>Добро пожаловать в программу русификации Adobe Photoshop Lightroom 2.x</H2>Данная программа позволит заменить один из дополнительных языков приложения Adobe Photoshop Lightroom на русский.<br><br>Русификатор для Lightroom версий: 2.0 - %1<br><br>Автор: Сергей Балякин, 2010");
 
 const QString text_file_prefix = QString::fromUtf8("file:///");
 
@@ -191,7 +187,7 @@ const QString text_ui_label_path                  = QString::fromUtf8("Полн�
 const QString text_ui_label_title_parameters      = QString::fromUtf8("Перетащите приложение Аdobe Photoshop Lightroom в это окно или выберите его при помощи кнопки \"Обзор...\"");
 const QString text_ui_label_choose_languages      = QString::fromUtf8("Выберите язык в качестве исходника перевода:");
 const QString text_ui_check_box_toggle_to_russian = QString::fromUtf8("Отключить все языки кроме русского");
-const QString text_ui_label_welcome_ss            = QString::fromUtf8("<H2>Добро пожаловать в программу русификации Adobe Photoshop Lightroom 2.x</H2>Данная программа позволит добавить русский язык в Lightroom в качестве дополнительного.<br><br>Версия русификатора: %1<br>Версия словаря: %2<br><br>Автор: Сергей Балякин, 2010");
+const QString text_ui_label_welcome_s             = QString::fromUtf8("<H2>Добро пожаловать в программу русификации Adobe Photoshop Lightroom 2.x</H2>Данная программа позволит добавить русский язык в Lightroom в качестве дополнительного.<br><br>Русификатор для Lightroom версий: 2.0 - %1<br><br>Автор: Сергей Балякин, 2010");
 
 const QString str_applications_dir_path  = QString::fromUtf8("/Applications");           // Абсолютная папка программ в Mac OS
 const QString str_contents_subdir_name   = QString::fromUtf8("Contents");                // Поддиректория содержимого пакета
