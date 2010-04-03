@@ -40,10 +40,10 @@ namespace consts
 // Нумераторы версий ***********************************************************
 
 // Версия приложения
-const QString application_version = QString::fromUtf8("1.0.0");
+const QString application_version = QString::fromUtf8("1.0");
 
 // Версия словаря
-const QString dictionary_version = QString::fromUtf8("1.0.0");
+const QString dictionary_version = QString::fromUtf8("1.0");
 
 
 // Пути к ресурсным файлам *****************************************************
@@ -84,6 +84,7 @@ const QString text_copying_help_files      = QString::fromUtf8("Копирова
 const QString text_convert_to_html_ss      = QString::fromUtf8("<span style=\"color:%1;\">%2</span><br>");
 const QString text_mailto_url_sss          = QString::fromUtf8("mailto:%1?subject=%2&body=%3");
 const QString text_author_mail_address     = QString::fromUtf8("lightroom@list.ru");
+const QString text_invalid_path            = QString::fromUtf8("Не удается обнаружить приложение Lightroom по указанному пути!");
 
 
 // Тексты ошибок
@@ -145,6 +146,7 @@ const QString text_ui_label_choose_languages      = QString::fromUtf8("Выбе�
 const QString text_ui_check_box_toggle_to_russian = QString::fromUtf8("Переключить язык в Lightroom на русский");
 const QString text_ui_label_welcome_ss            = QString::fromUtf8("<H2>Добро пожаловать в программу русификации Adobe Photoshop Lightroom 2.x</H2>Данная программа позволит заменить один из дополнительных языков приложения Adobe Photoshop Lightroom на русский.<br><br>Версия русификатора: %1<br>Версия словаря: %2<br><br>Автор: Сергей Балякин, 2010");
 
+const QString text_file_prefix = QString::fromUtf8("file:///");
 
 // Имя запускаемого файла
 const QString str_lightroom_exec_file_name = QString::fromUtf8("lightroom.exe");
@@ -201,6 +203,8 @@ const QString str_lang_subdir_filter     = QString::fromUtf8("*") + str_lproj_ex
 const QString str_prefs_window_file_name = QString::fromUtf8("PrefsWindow.lua");         // Файл со списком доступных языков
 const QString str_lua_files_filter       = QString::fromUtf8("*.lua");                   // Шаблон имен lua-файлов
 const QString str_app_files_filter       = QString::fromUtf8("*.app");                   // Фильтр файлов аппликации
+
+const QString text_file_prefix = QString::fromUtf8("file://");
 
 // Имя поддиректории с отключенными ресурсами
 const QString str_resources_disabled_sub_dir_name = QString::fromUtf8("Resources Disabled");

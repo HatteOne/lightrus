@@ -1,10 +1,10 @@
 # -------------------------------------------------
 # Project created by QtCreator 2009-04-21T10:13:34
 # -------------------------------------------------
-TARGET = Lightrus
+TARGET = lightrus
 
-CONFIG+=release
-CONFIG-=debug
+#CONFIG+=release
+#CONFIG-=debug
 
 TEMPLATE = app
 
