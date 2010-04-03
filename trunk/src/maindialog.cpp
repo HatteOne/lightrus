@@ -68,6 +68,8 @@ const bool is_enabled_next_button[] = {
 MainDialog::MainDialog(QWidget *parent)
     : QDialog(parent), ui(new Ui::MainDialogClass)
 {
+    bIsValidPath = false;
+
     ui->setupUi(this);
 
     setAcceptDrops(true);
@@ -85,6 +87,8 @@ MainDialog::MainDialog(QWidget *parent)
         ui->stacked_widget->setCurrentIndex(page_start);
     else
         OnPageActivated(page_start);
+
+    connect(ui->check_box_forced_mode,  SIGNAL(stateChanged(int)), SLOT(OnForcedModeToggled()));
 
     // Задаем платформенно-ориентированные тексты элементы интерфейса
     ui->label_path->setText                 (text_ui_label_path);
@@ -232,6 +236,11 @@ void MainDialog::CopyMailTextToClipboard()
     emit CopyToClipboard(ui->plain_text_edit_mail->toPlainText());
 }
 
+void MainDialog::OnForcedModeToggled()
+{
+    ui->push_button_next->setEnabled(bIsValidPath || ui->check_box_forced_mode->isChecked());
+}
+
 void MainDialog::closeEvent(QCloseEvent *event)
 {
     // Если активна последняя страница то выходим без запросов
@@ -305,6 +314,7 @@ void MainDialog::SetLightroomPath(const QString& path)
 
 void MainDialog::SetIsValidLightroomPath(bool is_valid)
 {
+    bIsValidPath = is_valid;
     QPalette palette = ui->line_edit_path->palette();
     if (is_valid)
         palette.setColor(QPalette::Text, color_black);
@@ -312,7 +322,7 @@ void MainDialog::SetIsValidLightroomPath(bool is_valid)
         palette.setColor(QPalette::Text, color_red);
 
     ui->line_edit_path->setPalette(palette);
-    ui->push_button_next->setEnabled(is_valid);
+    ui->push_button_next->setEnabled(is_valid || ui->check_box_forced_mode->isChecked());
 }
 
 QString MainDialog::GetLightroomPath()

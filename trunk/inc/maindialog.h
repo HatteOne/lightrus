@@ -109,10 +109,12 @@ private Q_SLOTS:
     void BrowseFolder(); // Открывает диалог выбора файла
     void OnPageActivated(int page_index);
     void CopyMailTextToClipboard();
+    void OnForcedModeToggled(); // Handler of force mode toggle
     //void on_push_button_cancel_pressed();
 
 private:
     Ui::MainDialogClass *ui;
+    bool bIsValidPath;
 
     void PageStartActivated();
     void PageParametersActivated();
