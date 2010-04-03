@@ -1,6 +1,6 @@
 Name "Adobe Photoshop Lightroom Rus"
 
-OutFile "lightrus.exe"
+OutFile "lightrus_100.exe"
 RequestExecutionLevel admin
 SilentInstall silent
 SetCompressor /FINAL lzma
@@ -10,13 +10,13 @@ Page instfiles
 
 Section ""
 
-	; Получаем уникальное имя папки
+	; РџРѕР»СѓС‡Р°РµРј СѓРЅРёРєР°Р»СЊРЅРѕРµ РёРјСЏ РїР°РїРєРё
 	GetTempFileName $0 $TEMP
 	Delete $0
 	CreateDirectory $0
 	SetOutPath $0
 	
-	; Копируем во временную директорию файлы для программы
+	; РљРѕРїРёСЂСѓРµРј РІРѕ РІСЂРµРјРµРЅРЅСѓСЋ РґРёСЂРµРєС‚РѕСЂРёСЋ С„Р°Р№Р»С‹ РґР»СЏ РїСЂРѕРіСЂР°РјРјС‹
 	File release\Lightrus.exe
 	File release\*.dll
 	
